@@ -13731,9 +13731,9 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <attribute name="VALUE" x="142.875" y="215.265" size="0.8128" layer="96"/>
 </instance>
 <instance part="JP2" gate="G$1" x="325.12" y="182.88" rot="R180"/>
-<instance part="R5" gate="G$1" x="243.84" y="172.72" smashed="yes">
-<attribute name="NAME" x="240.03" y="169.1386" size="1.778" layer="95"/>
-<attribute name="VALUE" x="245.11" y="169.418" size="1.778" layer="96"/>
+<instance part="R5" gate="G$1" x="33.02" y="154.94" smashed="yes">
+<attribute name="NAME" x="29.21" y="151.3586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="34.29" y="151.638" size="1.778" layer="96"/>
 </instance>
 <instance part="U$13" gate="G$1" x="25.4" y="137.16" smashed="yes">
 <attribute name="VALUE" x="23.495" y="133.985" size="0.8128" layer="96"/>
@@ -14232,8 +14232,8 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <net name="ESP3.3V" class="0">
 <segment>
 <pinref part="IC1" gate="D1" pin="3V3"/>
-<wire x1="195.58" y1="157.48" x2="182.88" y2="157.48" width="0.1524" layer="91"/>
-<label x="182.88" y="157.48" size="1.778" layer="95"/>
+<wire x1="195.58" y1="157.48" x2="180.34" y2="157.48" width="0.1524" layer="91"/>
+<label x="180.34" y="157.48" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="PS2" gate="G$1" pin="4"/>
@@ -14313,16 +14313,16 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <junction x="157.48" y="129.54"/>
 </segment>
 </net>
-<net name="RX-TX" class="0">
+<net name="ESP-TX" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="0(RX0)"/>
-<wire x1="43.18" y1="157.48" x2="25.4" y2="157.48" width="0.1524" layer="91"/>
-<label x="30.48" y="157.48" size="1.778" layer="95"/>
+<wire x1="43.18" y1="157.48" x2="22.86" y2="157.48" width="0.1524" layer="91"/>
+<label x="22.86" y="157.48" size="1.778" layer="95" rot="MR0"/>
 </segment>
 <segment>
-<label x="251.46" y="175.26" size="1.778" layer="95"/>
+<label x="236.22" y="175.26" size="1.778" layer="95"/>
 <pinref part="IC1" gate="D1" pin="TX"/>
-<wire x1="228.6" y1="175.26" x2="256.54" y2="175.26" width="0.1524" layer="91"/>
+<wire x1="228.6" y1="175.26" x2="236.22" y2="175.26" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="RXI"/>
@@ -14333,21 +14333,16 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <net name="TX-RX" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="1(TX0)"/>
-<wire x1="43.18" y1="154.94" x2="25.4" y2="154.94" width="0.1524" layer="91"/>
-<label x="30.48" y="154.94" size="1.778" layer="95"/>
-</segment>
-<segment>
+<wire x1="43.18" y1="154.94" x2="38.1" y2="154.94" width="0.1524" layer="91"/>
+<label x="38.1" y="154.94" size="1.778" layer="95"/>
 <pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="248.92" y1="172.72" x2="256.54" y2="172.72" width="0.1524" layer="91"/>
-<label x="251.46" y="172.72" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="TX-RX-L" class="0">
+<net name="ESP-RX" class="0">
 <segment>
-<pinref part="R5" gate="G$1" pin="1"/>
 <pinref part="IC1" gate="D1" pin="RX"/>
-<wire x1="238.76" y1="172.72" x2="228.6" y2="172.72" width="0.1524" layer="91"/>
-<label x="228.6" y="172.72" size="1.778" layer="95"/>
+<wire x1="236.22" y1="172.72" x2="228.6" y2="172.72" width="0.1524" layer="91"/>
+<label x="236.22" y="172.72" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="TXO"/>
@@ -14355,6 +14350,11 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <wire x1="208.28" y1="101.6" x2="233.68" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="LED1" gate="G$1" pin="C"/>
 <wire x1="233.68" y1="101.6" x2="233.68" y2="104.14" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="1"/>
+<wire x1="27.94" y1="154.94" x2="22.86" y2="154.94" width="0.1524" layer="91"/>
+<label x="22.86" y="154.94" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -14380,8 +14380,8 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <net name="D3-GPIO0" class="0">
 <segment>
 <pinref part="IC1" gate="D1" pin="D3"/>
-<wire x1="228.6" y1="165.1" x2="238.76" y2="165.1" width="0.1524" layer="91"/>
-<label x="231.14" y="165.1" size="1.778" layer="95"/>
+<wire x1="228.6" y1="165.1" x2="236.22" y2="165.1" width="0.1524" layer="91"/>
+<label x="236.22" y="165.1" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="G$1" pin="2"/>
@@ -14396,15 +14396,15 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <net name="BULTIN_LED" class="0">
 <segment>
 <pinref part="IC1" gate="D1" pin="D4"/>
-<wire x1="228.6" y1="162.56" x2="238.76" y2="162.56" width="0.1524" layer="91"/>
-<label x="231.14" y="162.56" size="1.778" layer="95"/>
+<wire x1="228.6" y1="162.56" x2="236.22" y2="162.56" width="0.1524" layer="91"/>
+<label x="236.22" y="162.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GPIO12" class="0">
 <segment>
 <pinref part="IC1" gate="D1" pin="D6"/>
-<wire x1="195.58" y1="165.1" x2="182.88" y2="165.1" width="0.1524" layer="91"/>
-<label x="182.88" y="165.1" size="1.778" layer="95"/>
+<wire x1="195.58" y1="165.1" x2="180.34" y2="165.1" width="0.1524" layer="91"/>
+<label x="180.34" y="165.1" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="RST@2"/>
@@ -14441,8 +14441,8 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <net name="A0" class="0">
 <segment>
 <pinref part="IC1" gate="D1" pin="A0"/>
-<wire x1="195.58" y1="172.72" x2="182.88" y2="172.72" width="0.1524" layer="91"/>
-<label x="182.88" y="172.72" size="1.778" layer="95"/>
+<wire x1="195.58" y1="172.72" x2="180.34" y2="172.72" width="0.1524" layer="91"/>
+<label x="180.34" y="172.72" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="JP4" gate="G$1" pin="2"/>
@@ -14469,20 +14469,21 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 </segment>
 <segment>
 <pinref part="IC1" gate="D1" pin="D5"/>
-<wire x1="195.58" y1="167.64" x2="182.88" y2="167.64" width="0.1524" layer="91"/>
-<label x="182.88" y="167.64" size="1.778" layer="95"/>
+<wire x1="195.58" y1="167.64" x2="180.34" y2="167.64" width="0.1524" layer="91"/>
+<label x="180.34" y="167.64" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$19" class="0">
 <segment>
 <pinref part="IC1" gate="D1" pin="D0"/>
-<wire x1="195.58" y1="170.18" x2="180.34" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="170.18" x2="193.04" y2="170.18" width="0.1524" layer="91"/>
 <pinref part="D0" gate="1" pin="P"/>
-<wire x1="195.58" y1="170.18" x2="195.58" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="193.04" y1="170.18" x2="180.34" y2="170.18" width="0.1524" layer="91"/>
 <pinref part="R9" gate="G$1" pin="2"/>
-<wire x1="195.58" y1="147.32" x2="254" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="254" y1="147.32" x2="254" y2="121.92" width="0.1524" layer="91"/>
-<junction x="195.58" y="170.18"/>
+<wire x1="193.04" y1="144.78" x2="254" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="254" y1="144.78" x2="254" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="193.04" y1="144.78" x2="193.04" y2="170.18" width="0.1524" layer="91"/>
+<junction x="193.04" y="170.18"/>
 </segment>
 </net>
 <net name="N$21" class="0">
@@ -14514,8 +14515,8 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 </segment>
 <segment>
 <pinref part="IC1" gate="D1" pin="D7"/>
-<wire x1="195.58" y1="162.56" x2="182.88" y2="162.56" width="0.1524" layer="91"/>
-<label x="182.88" y="162.56" size="1.778" layer="95"/>
+<wire x1="195.58" y1="162.56" x2="180.34" y2="162.56" width="0.1524" layer="91"/>
+<label x="180.34" y="162.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -14524,10 +14525,10 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <pinref part="IC1" gate="D1" pin="D8"/>
 <wire x1="180.34" y1="160.02" x2="190.5" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="190.5" y1="160.02" x2="195.58" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="190.5" y1="160.02" x2="190.5" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="160.02" x2="190.5" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="R8" gate="G$1" pin="2"/>
-<wire x1="190.5" y1="144.78" x2="246.38" y2="144.78" width="0.1524" layer="91"/>
-<wire x1="246.38" y1="144.78" x2="246.38" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="139.7" x2="246.38" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="139.7" x2="246.38" y2="121.92" width="0.1524" layer="91"/>
 <junction x="190.5" y="160.02"/>
 </segment>
 </net>
@@ -14565,7 +14566,7 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <net name="ESP5V" class="0">
 <segment>
 <pinref part="IC1" gate="D1" pin="5V"/>
-<wire x1="256.54" y1="157.48" x2="228.6" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="157.48" x2="228.6" y2="157.48" width="0.1524" layer="91"/>
 <label x="251.46" y="157.48" size="1.778" layer="95"/>
 </segment>
 <segment>
