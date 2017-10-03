@@ -1,13 +1,17 @@
 RFLink-ESPLink pcb
 ===================
 
-This is a PCB card for use with RF-Link, ESP-Link, ESP-Easy or what you find fits you best.
-It is mainly for my purpose of getting IKEA anslut remote control in my Home Assistant setup. And for measure my pellets and power meter.
+This is a PCB card for use with [RF-Link](http://rflink.nl/blog2/), [ESP-Link](https://github.com/jeelabs/esp-link), [ESP-Easy](https://github.com/letscontrolit/ESPEasy) or what you find fits you best.
+It is mainly for my purpose of getting [IKEA anslut remote control](http://www.ikea.com/se/sv/catalog/products/90300773/) in my Home Assistant setup. And for measure my pellets and power meter.
+
 **You can fill the board so it meat yours need!!**
 
 Use it as a RFLink with receiver and transmitter, and connect to server with USB, add CC2500 module for IKEA asnlut support.
-Add a Wemos D1 Mini to get the RFLink more portable and communicate via WiFi.
+
+Add a Wemos D1 Mini to get the RFLink more portable and communicate via WiFi via [tcp-mode](https://home-assistant.io/components/rflink/#tcp-mode).
 If you just are interested in IKEA anslut, use a CC2500 module + Arduino Pro Mini + Wemos D1 Mini and communicate with MQTT.
+ 
+ Inspired by https://github.com/NDBCK/Ansluta-Remote-Controller for Arduino Pro Mini support,  code coming!
  
 
 Schema
@@ -18,6 +22,9 @@ PCB
 ------
 Size 94 x 96mm
 ![rflink-esplink pcb topside](https://github.com/rosangen/rflink-esplink/blob/master/PCB/img/topp.jpg?raw=true "Title")
+
+Fore the moment, no PCB is tested, more info to come!
+
 Komponents
 -----------
 
@@ -95,15 +102,13 @@ Komponents
 </tr>
 <tr>
 <td>IC4</td>
-<td>CC2500&nbsp;</td>
 <td>CC2500</td>
-<td>MODULE</td>
+<td>CC2500 MODULE</td>
 </tr>
 <tr>
 <td>IC5</td>
 <td>TRANSMITTER 433MHZ</td>
-<td>TRANSMITTER433MHZ</td>
-<td>TRANSMITTER433MHZ</td>
+<td>TRANSMITTER 433MHZ</td>
 </tr>
 <tr>
 <td>IC6</td>
