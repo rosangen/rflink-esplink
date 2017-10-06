@@ -163,6 +163,12 @@ Komponents
 <td>PCB terminal block</td>
 </tr>
 <tr>
+<td>JP5</td>
+<td>GS015S-3.81-2P</td>
+<td>PCB terminal block</td>
+<td>PCB terminal block</td>
+</tr>
+<tr>
 <td>LED1</td>
 <td>LED1206</td>
 <td>LED-1206</td>
