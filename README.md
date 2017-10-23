@@ -15,12 +15,13 @@ Inspired by https://github.com/NDBCK/Ansluta-Remote-Controller for Arduino Pro M
 
 Schema
 -----------
-![rflink-esplink schema](https://github.com/rosangen/rflink-esplink/blob/master/PCB/img/schema-rflink-esplink.png?raw=true "Title")
+![rflink-esplink schema](https://github.com/rosangen/rflink-esplink/blob/master/PCB/img/schema-rflink-esplink.png?raw=true "Schema img")
+[Schema pdf](https://github.com/rosangen/rflink-esplink/blob/master/PCB/RfLink-ESPlink.pdf?raw=true "RfLink-ESPlink.pdf")
 
 PCB
 ------
 Size 94 x 96mm
-![rflink-esplink pcb topside](https://github.com/rosangen/rflink-esplink/blob/master/PCB/img/topp.jpg?raw=true "Title")
+![rflink-esplink pcb topside](https://github.com/rosangen/rflink-esplink/blob/master/PCB/img/topp.jpg?raw=true "rflink-esplink pcb topside")
 
 Fore the moment, no PCB is tested, more info to come!
 
