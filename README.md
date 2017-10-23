@@ -24,6 +24,43 @@ Size 94 x 96mm
 
 Fore the moment, no PCB is tested, more info to come!
 
+Configurations
+-----------
+Some configurations explained:
+
+### RFLink USB connected:
+```
+IC2 Arduino Mega, IC5 Transmitter, IC6 or IC7 Receiver, X1 Antenna connection. 
+Option 1: C5,C6 and C7 for better reception with RXB6 receiver.
+Option 2: R3, R9, LED1 so se TX communication is visible (receiving data).
+```
+
+### RFLink with ESP-link:
+```
+IC1 ESP, IC2 Arduino Mega, IC5 Transmitter, IC6 or IC7 Receiver. R1, R2, R3.
+- Ansluta option: IC4 CC2500, R4-7, C8.
+- Option 1 and 2, se above.
+```
+
+### Anluta MQTT:
+```
+IC1 ESP, IC3 Arduino Pro Mini 3.3v, IC4 CC2500 modul, C8.
+- Option R9 LED1
+```
+
+### EasyESP:
+With 1-wire temp and power meter sensor.
+```
+IC1 ESP, R20-R25 if needed. If lead needed: R10, R11, LED 2, LED3, R20, JP1, R21, JP2. 
+Temperatur: DS18B20 connected to JP1
+Power meter: LTR4206E ir detector connected to JP2.
+```
+
+### Onboard 3.3v converter
+If you don't want to use Mega 2560 or ESP interna 3.3v converter you can add U1 (AMS1117 3.3v) and C2, C3, C4.
+- PS1 Power selector is for choose input source, IC2 Mega or IC1 ESP 5 volt. (JP5 can only be in used if not Mega 2560 is in use).
+- PS2 is the 3.3v source selector, use INT with interna 3.3v converter.
+
 Komponents
 -----------
 
