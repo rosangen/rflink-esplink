@@ -84,6 +84,12 @@ Komponents
 <td>C0805</td>
 </tr>
 <tr>
+<td>C9</td>
+<td>10&micro;F</td>
+<td>CPOL-EUE2-5</td>
+<td>E2-5</td>
+</tr>
+<tr>
 <td>IC1</td>
 <td>WEMOS D1 MINI</td>
 <td>WEMOS D1 MINI</td>
@@ -125,6 +131,11 @@ Komponents
 <td>NRF24L01A</td>
 <td>NRF24L01A</td>
 <td>NRF24L01</td>
+</tr>
+<tr>
+<td>IC9</td>
+<td>ESP-01</td>
+<td>ESP8266 Wifi module 01</td>
 </tr>
 <tr>
 <td>J1</td>
@@ -209,8 +220,8 @@ Komponents
 <td>R0805</td>
 </tr>
 <tr>
+<td>R2</td>
 <td>470R</td>
-<td>1K</td>
 <td>RESISTORR0805</td>
 <td>R0805</td>
 </tr>
@@ -265,6 +276,18 @@ Komponents
 <tr>
 <td>R11</td>
 <td>1K</td>
+<td>RESISTORR0805</td>
+<td>R0805</td>
+</tr>
+<tr>
+<td>R12</td>
+<td>4k7</td>
+<td>RESISTORR0805</td>
+<td>R0805</td>
+</tr>
+<tr>
+<td>R13</td>
+<td>4k7</td>
 <td>RESISTORR0805</td>
 <td>R0805</td>
 </tr>

@@ -1229,6 +1229,31 @@ SWITCH</text>
 <wire x1="-9.652" y1="-15.24" x2="-8.89" y2="-15.24" width="0.127" layer="21"/>
 <wire x1="-8.89" y1="15.24" x2="11.43" y2="15.24" width="0.127" layer="21" style="shortdash"/>
 </package>
+<package name="ESP01">
+<description>ESP8266 Module 01</description>
+<pad name="GND" x="-3.825" y="-5.6375" drill="0.8" shape="square" rot="R270"/>
+<pad name="RX" x="3.795" y="-5.6375" drill="0.8" shape="square" rot="R270"/>
+<pad name="GPIO2" x="-1.285" y="-5.6375" drill="0.8" rot="R270"/>
+<pad name="GPIO0" x="1.255" y="-5.6375" drill="0.8" rot="R270"/>
+<pad name="RST" x="1.255" y="-8.1775" drill="0.8" rot="R270"/>
+<pad name="CH_PD" x="-1.285" y="-8.1775" drill="0.8" rot="R270"/>
+<pad name="TX" x="-3.825" y="-8.1775" drill="0.8" rot="R270"/>
+<pad name="VCC" x="3.795" y="-8.1775" drill="0.8" rot="R270"/>
+<wire x1="-7" y1="15" x2="-7" y2="7.38" width="0.127" layer="21" style="shortdash"/>
+<wire x1="-7" y1="7.38" x2="-7" y2="-9.765" width="0.127" layer="21" style="shortdash"/>
+<wire x1="-7" y1="-9.765" x2="7.2875" y2="-9.765" width="0.127" layer="21" style="shortdash"/>
+<wire x1="7.2875" y1="-9.765" x2="7.2875" y2="7.38" width="0.127" layer="21" style="shortdash"/>
+<wire x1="7.2875" y1="7.38" x2="7.2875" y2="15" width="0.127" layer="21" style="shortdash"/>
+<wire x1="7.2875" y1="15" x2="-7" y2="15" width="0.127" layer="21" style="shortdash"/>
+<wire x1="-7" y1="7.38" x2="7.2875" y2="7.38" width="0.127" layer="21" style="shortdash"/>
+<text x="-5.73" y="9.92" size="2.54" layer="48">ESP-01</text>
+<text x="-7" y="16" size="1.27" layer="25">&gt;Name</text>
+<text x="-7" y="-11" size="1.27" layer="27">&gt;Value</text>
+<wire x1="-5.08" y1="-9.271" x2="5.08" y2="-9.271" width="0.1524" layer="21" style="shortdash"/>
+<wire x1="5.08" y1="-9.271" x2="5.08" y2="-4.572" width="0.1524" layer="21" style="shortdash"/>
+<wire x1="5.08" y1="-4.572" x2="-5.08" y2="-4.572" width="0.1524" layer="21" style="shortdash"/>
+<wire x1="-5.08" y1="-4.572" x2="-5.08" y2="-9.271" width="0.1524" layer="21" style="shortdash"/>
+</package>
 </packages>
 <symbols>
 <symbol name="WEMOS-D1-MINI">
@@ -1257,6 +1282,23 @@ ESP8266 module</description>
 <pin name="TX" x="17.78" y="10.16" visible="pin" length="middle" rot="R180"/>
 <text x="-10.16" y="13.208" size="1.778" layer="95">&gt;Name</text>
 <text x="-7.62" y="-15.24" size="1.778" layer="96">&gt;Value</text>
+</symbol>
+<symbol name="ESP01">
+<description>ESP8266 Wifi module 01</description>
+<wire x1="-12.7" y1="10.16" x2="-12.7" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-2.54" x2="10.16" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-2.54" x2="10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="10.16" x2="-12.7" y2="10.16" width="0.254" layer="94"/>
+<pin name="GND" x="-17.78" y="7.62" visible="pin" length="middle"/>
+<pin name="GPIO2" x="-17.78" y="5.08" visible="pin" length="middle"/>
+<pin name="GPIO0" x="-17.78" y="2.54" visible="pin" length="middle"/>
+<pin name="RXD" x="-17.78" y="0" visible="pin" length="middle"/>
+<pin name="TXD" x="15.24" y="7.62" visible="pin" length="middle" rot="R180"/>
+<pin name="CH_PD" x="15.24" y="5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="RST" x="15.24" y="2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="VCC" x="15.24" y="0" visible="pin" length="middle" rot="R180"/>
+<text x="-12.7" y="10.668" size="1.778" layer="95">&gt;Name</text>
+<text x="-12.7" y="-5.08" size="1.778" layer="95">&gt;Value</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -1293,12 +1335,35 @@ ESP8266 module</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="ESP01">
+<description>ESP8266 Wifi module 01</description>
+<gates>
+<gate name="G$1" symbol="ESP01" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="ESP01">
+<connects>
+<connect gate="G$1" pin="CH_PD" pad="CH_PD"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="GPIO0" pad="GPIO0"/>
+<connect gate="G$1" pin="GPIO2" pad="GPIO2"/>
+<connect gate="G$1" pin="RST" pad="RST"/>
+<connect gate="G$1" pin="RXD" pad="RX"/>
+<connect gate="G$1" pin="TXD" pad="TX"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="CC2500A">
 <description>CC2500A Module</description>
 <packages>
-<package name="MODULE">
+<package name="CC2500">
 <text x="-4.98" y="13.27" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="7.27" y="11.48" size="1.27" layer="25" font="vector" rot="R270">&gt;VALUE</text>
 <wire x1="-6" y1="-6" x2="-6" y2="12" width="0.127" layer="21" style="shortdash"/>
@@ -1358,7 +1423,7 @@ ESP8266 module</description>
 </package>
 </packages>
 <symbols>
-<symbol name="MODULE">
+<symbol name="CC2500">
 <wire x1="-10.16" y1="-12.7" x2="12.7" y2="-12.7" width="0.254" layer="94"/>
 <wire x1="12.7" y1="-12.7" x2="12.7" y2="12.7" width="0.254" layer="94"/>
 <wire x1="12.7" y1="12.7" x2="-10.16" y2="12.7" width="0.254" layer="94"/>
@@ -1372,8 +1437,7 @@ ESP8266 module</description>
 <pin name="GDO0" x="7.62" y="-17.78" length="middle" rot="R90"/>
 <pin name="RFCS" x="10.16" y="-17.78" length="middle" rot="R90"/>
 <text x="-10.16" y="13.462" size="1.778" layer="95">&gt;NAME</text>
-<text x="13.462" y="12.446" size="1.778" layer="96" rot="R270">&gt;VALUE</text>
-<text x="-7.62" y="7.62" size="1.778" layer="95">CC2500A</text>
+<text x="-7.62" y="7.62" size="1.778" layer="96">&gt;VALUE</text>
 <text x="-7.62" y="2.54" size="1.778" layer="95">RF MODULE</text>
 </symbol>
 </symbols>
@@ -1381,10 +1445,10 @@ ESP8266 module</description>
 <deviceset name="CC2500A" prefix="CC2500A">
 <description>CC2500A Moduel</description>
 <gates>
-<gate name="G$1" symbol="MODULE" x="-12.7" y="2.54"/>
+<gate name="G$1" symbol="CC2500" x="-12.7" y="2.54"/>
 </gates>
 <devices>
-<device name="-MODULE" package="MODULE">
+<device name="-MODULE" package="CC2500">
 <connects>
 <connect gate="G$1" pin="3.3V" pad="2"/>
 <connect gate="G$1" pin="GDO0" pad="7"/>
@@ -10687,37 +10751,39 @@ distributor RS 112-3794</description>
 <wire x1="0" y1="-30.48" x2="15.24" y2="-30.48" width="0.127" layer="51"/>
 <wire x1="15.24" y1="-30.48" x2="15.24" y2="0" width="0.127" layer="51"/>
 <wire x1="15.24" y1="0" x2="0" y2="0" width="0.127" layer="51"/>
-<wire x1="0" y1="0" x2="0" y2="-30.48" width="0.2032" layer="21" style="shortdash"/>
-<wire x1="0" y1="-30.48" x2="15.24" y2="-30.48" width="0.2032" layer="21" style="shortdash"/>
+<wire x1="0" y1="0" x2="0" y2="-30.48" width="0.127" layer="21" style="shortdash"/>
+<wire x1="0" y1="-30.48" x2="15.24" y2="-30.48" width="0.127" layer="21" style="shortdash"/>
 <text x="0" y="1.27" size="1.27" layer="25">&gt;NAME</text>
-<wire x1="15.24" y1="-4.445" x2="14.605" y2="-5.08" width="0.2032" layer="21"/>
-<wire x1="13.335" y1="-5.08" x2="12.7" y2="-4.445" width="0.2032" layer="21"/>
-<wire x1="14.605" y1="0" x2="13.335" y2="0" width="0.2032" layer="21"/>
-<wire x1="15.24" y1="-0.635" x2="14.605" y2="0" width="0.2032" layer="21"/>
-<wire x1="13.335" y1="0" x2="12.7" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="14.605" y1="-5.08" x2="13.335" y2="-5.08" width="0.2032" layer="21"/>
-<wire x1="15.24" y1="-0.635" x2="15.24" y2="-4.445" width="0.2032" layer="21"/>
-<wire x1="12.7" y1="-4.445" x2="12.065" y2="-5.08" width="0.2032" layer="21"/>
-<wire x1="10.795" y1="-5.08" x2="10.16" y2="-4.445" width="0.2032" layer="21"/>
-<wire x1="12.065" y1="0" x2="10.795" y2="0" width="0.2032" layer="21"/>
-<wire x1="12.7" y1="-0.635" x2="12.065" y2="0" width="0.2032" layer="21"/>
-<wire x1="10.795" y1="0" x2="10.16" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="12.065" y1="-5.08" x2="10.795" y2="-5.08" width="0.2032" layer="21"/>
-<wire x1="10.16" y1="-4.445" x2="9.525" y2="-5.08" width="0.2032" layer="21"/>
-<wire x1="8.255" y1="-5.08" x2="7.62" y2="-4.445" width="0.2032" layer="21"/>
-<wire x1="9.525" y1="0" x2="8.255" y2="0" width="0.2032" layer="21"/>
-<wire x1="10.16" y1="-0.635" x2="9.525" y2="0" width="0.2032" layer="21"/>
-<wire x1="8.255" y1="0" x2="7.62" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="9.525" y1="-5.08" x2="8.255" y2="-5.08" width="0.2032" layer="21"/>
-<wire x1="7.62" y1="-4.445" x2="6.985" y2="-5.08" width="0.2032" layer="21"/>
-<wire x1="5.715" y1="-5.08" x2="5.08" y2="-4.445" width="0.2032" layer="21"/>
-<wire x1="6.985" y1="0" x2="5.715" y2="0" width="0.2032" layer="21"/>
-<wire x1="7.62" y1="-0.635" x2="6.985" y2="0" width="0.2032" layer="21"/>
-<wire x1="5.715" y1="0" x2="5.08" y2="-0.635" width="0.2032" layer="21"/>
-<wire x1="6.985" y1="-5.08" x2="5.715" y2="-5.08" width="0.2032" layer="21"/>
-<wire x1="5.08" y1="-0.762" x2="5.08" y2="-4.445" width="0.2032" layer="21"/>
-<wire x1="0" y1="0" x2="5.08" y2="0" width="0.2032" layer="21" style="shortdash"/>
-<wire x1="15.24" y1="-5.08" x2="15.24" y2="-30.48" width="0.2032" layer="21" style="shortdash"/>
+<wire x1="15.24" y1="-4.445" x2="14.605" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="13.335" y1="-5.08" x2="12.7" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="14.605" y1="0" x2="13.335" y2="0" width="0.127" layer="21"/>
+<wire x1="15.24" y1="-0.635" x2="14.605" y2="0" width="0.127" layer="21"/>
+<wire x1="13.335" y1="0" x2="12.7" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="14.605" y1="-5.08" x2="13.335" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="15.24" y1="-0.635" x2="15.24" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="12.7" y1="-4.445" x2="12.065" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="10.795" y1="-5.08" x2="10.16" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="12.065" y1="0" x2="10.795" y2="0" width="0.127" layer="21"/>
+<wire x1="12.7" y1="-0.635" x2="12.065" y2="0" width="0.127" layer="21"/>
+<wire x1="10.795" y1="0" x2="10.16" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="12.065" y1="-5.08" x2="10.795" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="10.16" y1="-4.445" x2="9.525" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="8.255" y1="-5.08" x2="7.62" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="9.525" y1="0" x2="8.255" y2="0" width="0.127" layer="21"/>
+<wire x1="10.16" y1="-0.635" x2="9.525" y2="0" width="0.127" layer="21"/>
+<wire x1="8.255" y1="0" x2="7.62" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="9.525" y1="-5.08" x2="8.255" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="7.62" y1="-4.445" x2="6.985" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="5.715" y1="-5.08" x2="5.08" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="6.985" y1="0" x2="5.715" y2="0" width="0.127" layer="21"/>
+<wire x1="7.62" y1="-0.635" x2="6.985" y2="0" width="0.127" layer="21"/>
+<wire x1="5.715" y1="0" x2="5.08" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="6.985" y1="-5.08" x2="5.715" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="5.08" y1="-0.762" x2="5.08" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="5.08" y1="-1.27" x2="5.08" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="5.08" y2="0" width="0.127" layer="21" style="shortdash"/>
+<wire x1="15.24" y1="-5.08" x2="15.24" y2="-30.48" width="0.127" layer="21" style="shortdash"/>
+<wire x1="5.08" y1="-0.762" x2="5.08" y2="-0.635" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -11652,7 +11718,7 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <part name="LED4" library="SparkFun" deviceset="LED" device="1206"/>
 <part name="R8" library="kb20" deviceset="RESISTOR" device="R0805" value="1K"/>
 <part name="U$20" library="Power or GND " deviceset="GND_POWER" device=""/>
-<part name="VCC2" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="+3.3V" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
 <part name="G" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1" value="GND"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C8" library="kb20" deviceset="CAPACITOR" device="" value="100nF"/>
@@ -11681,18 +11747,63 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <part name="JP5" library="kb20" deviceset="GS015S-3.81-2P" device=""/>
 <part name="R2" library="kb20" deviceset="RESISTOR" device="R0805" value="470R"/>
 <part name="R1" library="kb20" deviceset="RESISTOR" device="R0805" value="470R"/>
+<part name="IC9" library="esp8266modules" deviceset="ESP01" device="" value="ESP-01"/>
+<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="RX" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1" value="RX"/>
+<part name="GND5" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1" value="GND"/>
+<part name="TX" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1" value="TX"/>
+<part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="R12" library="kb20" deviceset="RESISTOR" device="R0805" value="4k7"/>
+<part name="R13" library="kb20" deviceset="RESISTOR" device="R0805" value="4k7"/>
+<part name="+3V13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
+<part name="+3V14" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
+<part name="+3V15" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
+<part name="VCC2" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="D6" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1" value="D6"/>
+<part name="GND7" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1" value="GND"/>
+<part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="C9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E2-5" package3d_urn="urn:adsk.eagle:package:23346/2" value="10μF"/>
+<part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GPIO2" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1" value="IO2"/>
+<part name="P1" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P2" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P3" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P4" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P5" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P6" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P7" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P8" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P9" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P10" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P11" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P12" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P13" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P14" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P15" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P16" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P17" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P18" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P19" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P20" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P21" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P22" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P23" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P24" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="P25" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="1,6/0,9" device="" package3d_urn="urn:adsk.eagle:package:30840/1"/>
+<part name="+3V16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
+<part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="213.36" y="53.34" size="1.778" layer="91">Power selector</text>
+<text x="208.28" y="53.34" size="1.778" layer="91">Power selector</text>
 <text x="332.74" y="177.8" size="1.778" layer="91">Blink</text>
 <text x="354.33" y="183.896" size="1.778" layer="91">Flat side</text>
 <text x="353.06" y="178.816" size="1.778" layer="91" rot="MR180">Ex. LTR4206E</text>
 <text x="332.74" y="134.62" size="1.778" layer="91">Analog (Photoresistor)</text>
 <text x="332.74" y="147.32" size="1.778" layer="91">Turn</text>
 <text x="332.74" y="213.36" size="1.778" layer="91">1-Wire</text>
-<text x="109.22" y="55.88" size="1.778" layer="91">Power selector</text>
+<text x="104.14" y="55.88" size="1.778" layer="91">Power selector</text>
 <wire x1="127" y1="251.46" x2="215.9" y2="251.46" width="0.1524" layer="94" style="dashdot"/>
 <wire x1="215.9" y1="251.46" x2="274.32" y2="251.46" width="0.1524" layer="94" style="dashdot"/>
 <wire x1="274.32" y1="251.46" x2="274.32" y2="185.42" width="0.1524" layer="94" style="dashdot"/>
@@ -11702,8 +11813,13 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <wire x1="215.9" y1="251.46" x2="215.9" y2="185.42" width="0.1524" layer="94" style="dashdot"/>
 <text x="132.08" y="246.38" size="2.54" layer="94">Option RXB6</text>
 <text x="218.44" y="246.38" size="2.54" layer="94">Option Aurel RTX MID</text>
-<text x="332.74" y="91.44" size="1.778" layer="91">Ext power</text>
-<text x="377.952" y="7.112" size="2.54" layer="94">0.81</text>
+<text x="332.74" y="106.68" size="1.778" layer="91">Ext power</text>
+<text x="377.952" y="7.112" size="2.54" layer="94">0.9</text>
+<wire x1="261.62" y1="91.44" x2="370.84" y2="91.44" width="0.1524" layer="94" style="dashdot"/>
+<wire x1="370.84" y1="91.44" x2="370.84" y2="53.34" width="0.1524" layer="94" style="dashdot"/>
+<wire x1="370.84" y1="53.34" x2="261.62" y2="53.34" width="0.1524" layer="94" style="dashdot"/>
+<wire x1="261.62" y1="53.34" x2="261.62" y2="91.44" width="0.1524" layer="94" style="dashdot"/>
+<text x="266.7" y="86.36" size="2.54" layer="94">Debug Option</text>
 </plain>
 <instances>
 <instance part="IC2" gate="G$1" x="63.5" y="165.1"/>
@@ -11711,9 +11827,9 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <attribute name="NAME" x="200.66" y="178.308" size="1.778" layer="95"/>
 <attribute name="VALUE" x="203.2" y="149.86" size="1.778" layer="96"/>
 </instance>
-<instance part="IC4" gate="G$1" x="147.32" y="162.56" smashed="yes">
-<attribute name="NAME" x="137.16" y="176.022" size="1.778" layer="95"/>
-<attribute name="VALUE" x="160.782" y="175.006" size="1.778" layer="96" rot="R270"/>
+<instance part="IC4" gate="G$1" x="147.32" y="165.1" smashed="yes">
+<attribute name="NAME" x="137.16" y="178.562" size="1.778" layer="95"/>
+<attribute name="VALUE" x="139.7" y="172.72" size="1.778" layer="96"/>
 </instance>
 <instance part="IC6" gate="G$1" x="187.96" y="231.14"/>
 <instance part="IC5" gate="G$1" x="139.7" y="231.14" smashed="yes">
@@ -11757,16 +11873,16 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <instance part="U$5" gate="G$1" x="101.6" y="96.52" smashed="yes" rot="R270">
 <attribute name="VALUE" x="98.425" y="98.425" size="0.8128" layer="96" rot="R270"/>
 </instance>
-<instance part="GND2" gate="1" x="147.32" y="22.86"/>
-<instance part="C3" gate="G$1" x="132.08" y="40.64"/>
-<instance part="C4" gate="G$1" x="165.1" y="40.64"/>
-<instance part="U1" gate="G$1" x="147.32" y="48.26"/>
-<instance part="GND" gate="1" x="63.5" y="71.12" smashed="yes" rot="R270">
-<attribute name="VALUE" x="65.278" y="72.263" size="1.778" layer="96" rot="R270"/>
+<instance part="GND2" gate="1" x="142.24" y="22.86"/>
+<instance part="C3" gate="G$1" x="127" y="40.64"/>
+<instance part="C4" gate="G$1" x="160.02" y="40.64"/>
+<instance part="U1" gate="G$1" x="142.24" y="48.26"/>
+<instance part="GND" gate="1" x="66.04" y="50.8" smashed="yes" rot="R270">
+<attribute name="VALUE" x="67.818" y="51.943" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="GND19" gate="1" x="63.5" y="58.42"/>
-<instance part="PS2" gate="G$1" x="218.44" y="45.72"/>
-<instance part="+3V2" gate="G$1" x="231.14" y="60.96"/>
+<instance part="GND19" gate="1" x="66.04" y="38.1"/>
+<instance part="PS2" gate="G$1" x="213.36" y="45.72"/>
+<instance part="+3V2" gate="G$1" x="226.06" y="60.96"/>
 <instance part="+3V1" gate="G$1" x="129.54" y="154.94"/>
 <instance part="+3V3" gate="G$1" x="134.62" y="101.6"/>
 <instance part="+3V4" gate="G$1" x="177.8" y="116.84"/>
@@ -11776,7 +11892,7 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <instance part="U$7" gate="G$1" x="233.68" y="160.02" smashed="yes" rot="R90">
 <attribute name="VALUE" x="236.855" y="158.115" size="0.8128" layer="96" rot="R90"/>
 </instance>
-<instance part="VCC1" gate="1" x="48.26" y="71.12" rot="R270"/>
+<instance part="VCC1" gate="1" x="58.42" y="50.8" rot="R270"/>
 <instance part="U$9" gate="G$1" x="144.78" y="218.44" smashed="yes">
 <attribute name="VALUE" x="142.875" y="215.265" size="0.8128" layer="96"/>
 </instance>
@@ -11821,36 +11937,48 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <instance part="U$10" gate="G$1" x="317.5" y="203.2" smashed="yes">
 <attribute name="VALUE" x="315.595" y="200.025" size="0.8128" layer="96"/>
 </instance>
-<instance part="D8" gate="1" x="177.8" y="160.02"/>
-<instance part="D0" gate="1" x="177.8" y="170.18"/>
-<instance part="C1" gate="G$1" x="241.3" y="43.18"/>
-<instance part="U$4" gate="G$1" x="241.3" y="38.1" smashed="yes">
-<attribute name="VALUE" x="239.395" y="34.925" size="0.8128" layer="96"/>
+<instance part="D8" gate="1" x="175.26" y="160.02"/>
+<instance part="D0" gate="1" x="175.26" y="170.18"/>
+<instance part="C1" gate="G$1" x="236.22" y="43.18"/>
+<instance part="U$4" gate="G$1" x="236.22" y="38.1" smashed="yes">
+<attribute name="VALUE" x="234.315" y="34.925" size="0.8128" layer="96"/>
 </instance>
-<instance part="R9" gate="G$1" x="233.68" y="116.84" rot="R90"/>
+<instance part="R9" gate="G$1" x="233.68" y="116.84" smashed="yes" rot="R90">
+<attribute name="NAME" x="232.1814" y="114.808" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="236.982" y="114.808" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="+3V7" gate="G$1" x="233.68" y="129.54"/>
 <instance part="LED1" gate="G$1" x="233.68" y="109.22"/>
-<instance part="R10" gate="G$1" x="246.38" y="116.84" rot="R90"/>
+<instance part="R10" gate="G$1" x="246.38" y="116.84" smashed="yes" rot="R90">
+<attribute name="NAME" x="244.8814" y="114.808" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="249.682" y="114.808" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="LED2" gate="G$1" x="246.38" y="109.22"/>
 <instance part="U$15" gate="G$1" x="246.38" y="101.6" smashed="yes">
 <attribute name="VALUE" x="244.475" y="98.425" size="0.8128" layer="96"/>
 </instance>
 <instance part="LED4" gate="G$1" x="223.52" y="127"/>
-<instance part="R8" gate="G$1" x="223.52" y="116.84" rot="R90"/>
+<instance part="R8" gate="G$1" x="223.52" y="116.84" smashed="yes" rot="R90">
+<attribute name="NAME" x="222.0214" y="114.808" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="226.822" y="114.808" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="U$20" gate="G$1" x="223.52" y="111.76" smashed="yes">
 <attribute name="VALUE" x="221.615" y="108.585" size="0.8128" layer="96"/>
 </instance>
-<instance part="VCC2" gate="1" x="43.18" y="71.12" rot="R270"/>
-<instance part="G" gate="1" x="73.66" y="71.12" smashed="yes" rot="R270">
-<attribute name="VALUE" x="75.438" y="72.263" size="1.778" layer="96" rot="R270"/>
+<instance part="+3.3V" gate="1" x="360.68" y="81.28" smashed="yes" rot="R180">
+<attribute name="NAME" x="362.077" y="80.5942" size="1.778" layer="95"/>
+<attribute name="VALUE" x="361.823" y="84.582" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND1" gate="1" x="73.66" y="58.42"/>
+<instance part="G" gate="1" x="76.2" y="50.8" smashed="yes" rot="R270">
+<attribute name="VALUE" x="77.978" y="51.943" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="GND1" gate="1" x="76.2" y="38.1"/>
 <instance part="C8" gate="G$1" x="124.46" y="139.7" rot="R90"/>
 <instance part="C6" gate="G$1" x="190.5" y="203.2" smashed="yes" rot="R180">
 <attribute name="NAME" x="192.024" y="206.121" size="1.778" layer="95"/>
 <attribute name="VALUE" x="186.944" y="198.501" size="1.778" layer="96"/>
 </instance>
-<instance part="C2" gate="G$1" x="124.46" y="40.64"/>
+<instance part="C2" gate="G$1" x="119.38" y="40.64"/>
 <instance part="U$21" gate="G$1" x="190.5" y="190.5" smashed="yes">
 <attribute name="VALUE" x="188.595" y="187.325" size="0.8128" layer="96"/>
 </instance>
@@ -11872,12 +12000,15 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <attribute name="VALUE" x="196.215" y="187.325" size="0.8128" layer="96"/>
 </instance>
 <instance part="J1" gate="A" x="33.02" y="144.78"/>
-<instance part="R11" gate="G$1" x="254" y="116.84" rot="R90"/>
+<instance part="R11" gate="G$1" x="254" y="116.84" smashed="yes" rot="R90">
+<attribute name="NAME" x="252.5014" y="114.808" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="257.302" y="114.808" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="LED3" gate="G$1" x="254" y="109.22"/>
 <instance part="U$26" gate="G$1" x="254" y="101.6" smashed="yes">
 <attribute name="VALUE" x="252.095" y="98.425" size="0.8128" layer="96"/>
 </instance>
-<instance part="PS1" gate="G$1" x="114.3" y="48.26" rot="R270"/>
+<instance part="PS1" gate="G$1" x="109.22" y="48.26" rot="R270"/>
 <instance part="FRAME3" gate="G$1" x="0" y="0"/>
 <instance part="FRAME3" gate="G$2" x="287.02" y="0"/>
 <instance part="U$25" gate="G$1" x="185.42" y="218.44" smashed="yes">
@@ -11894,10 +12025,10 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 </instance>
 <instance part="U3" gate="G$1" x="353.06" y="160.02" rot="MR0"/>
 <instance part="+3V8" gate="G$1" x="302.26" y="142.24"/>
-<instance part="U$27" gate="G$1" x="314.96" y="86.36" smashed="yes">
-<attribute name="VALUE" x="313.055" y="83.185" size="0.8128" layer="96"/>
+<instance part="U$27" gate="G$1" x="314.96" y="101.6" smashed="yes">
+<attribute name="VALUE" x="313.055" y="98.425" size="0.8128" layer="96"/>
 </instance>
-<instance part="JP5" gate="G$1" x="325.12" y="88.9" rot="R180"/>
+<instance part="JP5" gate="G$1" x="325.12" y="104.14" rot="R180"/>
 <instance part="R2" gate="G$1" x="33.02" y="157.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="29.21" y="158.9786" size="1.778" layer="95"/>
 <attribute name="VALUE" x="34.29" y="159.258" size="1.778" layer="96"/>
@@ -11906,6 +12037,116 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <attribute name="NAME" x="26.67" y="197.0786" size="1.778" layer="95"/>
 <attribute name="VALUE" x="34.29" y="197.358" size="1.778" layer="96"/>
 </instance>
+<instance part="IC9" gate="G$1" x="302.26" y="68.58"/>
+<instance part="GND3" gate="1" x="266.7" y="76.2" rot="R270"/>
+<instance part="RX" gate="1" x="360.68" y="76.2" smashed="yes" rot="R180">
+<attribute name="VALUE" x="362.077" y="75.438" size="1.778" layer="96"/>
+</instance>
+<instance part="GND5" gate="1" x="360.68" y="73.66" smashed="yes" rot="R180">
+<attribute name="VALUE" x="362.077" y="72.898" size="1.778" layer="96"/>
+</instance>
+<instance part="TX" gate="1" x="360.68" y="78.74" smashed="yes" rot="R180">
+<attribute name="VALUE" x="362.077" y="77.978" size="1.778" layer="96"/>
+</instance>
+<instance part="GND4" gate="1" x="347.98" y="68.58"/>
+<instance part="R12" gate="G$1" x="332.74" y="78.74" rot="R90"/>
+<instance part="R13" gate="G$1" x="340.36" y="78.74" rot="R90"/>
+<instance part="+3V13" gate="G$1" x="332.74" y="88.9"/>
+<instance part="+3V14" gate="G$1" x="340.36" y="88.9"/>
+<instance part="+3V15" gate="G$1" x="353.06" y="88.9"/>
+<instance part="VCC2" gate="1" x="58.42" y="83.82" rot="R270"/>
+<instance part="D6" gate="1" x="68.58" y="83.82" smashed="yes" rot="R270">
+<attribute name="VALUE" x="70.358" y="84.963" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="GND7" gate="1" x="76.2" y="83.82" smashed="yes" rot="R270">
+<attribute name="VALUE" x="77.978" y="84.963" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="GND6" gate="1" x="76.2" y="71.12"/>
+<instance part="C9" gate="G$1" x="332.74" y="66.04" smashed="yes">
+<attribute name="NAME" x="333.883" y="66.5226" size="1.778" layer="95"/>
+<attribute name="VALUE" x="333.883" y="58.9026" size="1.778" layer="96"/>
+</instance>
+<instance part="GND8" gate="1" x="332.74" y="58.42"/>
+<instance part="GPIO2" gate="1" x="274.32" y="73.66" smashed="yes">
+<attribute name="VALUE" x="272.923" y="74.422" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="P1" gate="1" x="251.46" y="30.48" smashed="yes" rot="R270">
+<attribute name="VALUE" x="252.222" y="31.877" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P2" gate="1" x="256.54" y="30.48" smashed="yes" rot="R270">
+<attribute name="VALUE" x="257.302" y="31.877" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P3" gate="1" x="261.62" y="30.48" smashed="yes" rot="R270">
+<attribute name="VALUE" x="262.382" y="31.877" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P4" gate="1" x="266.7" y="30.48" smashed="yes" rot="R270">
+<attribute name="VALUE" x="267.462" y="31.877" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P5" gate="1" x="271.78" y="30.48" smashed="yes" rot="R270">
+<attribute name="VALUE" x="272.542" y="31.877" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P6" gate="1" x="251.46" y="22.86" smashed="yes" rot="R270">
+<attribute name="VALUE" x="252.222" y="24.257" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P7" gate="1" x="256.54" y="22.86" smashed="yes" rot="R270">
+<attribute name="VALUE" x="257.302" y="24.257" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P8" gate="1" x="261.62" y="22.86" smashed="yes" rot="R270">
+<attribute name="VALUE" x="262.382" y="24.257" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P9" gate="1" x="266.7" y="22.86" smashed="yes" rot="R270">
+<attribute name="VALUE" x="267.462" y="24.257" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P10" gate="1" x="271.78" y="22.86" smashed="yes" rot="R270">
+<attribute name="VALUE" x="272.542" y="24.257" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P11" gate="1" x="251.46" y="15.24" smashed="yes" rot="R270">
+<attribute name="VALUE" x="252.222" y="16.637" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P12" gate="1" x="256.54" y="15.24" smashed="yes" rot="R270">
+<attribute name="VALUE" x="257.302" y="16.637" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P13" gate="1" x="261.62" y="15.24" smashed="yes" rot="R270">
+<attribute name="VALUE" x="262.382" y="16.637" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P14" gate="1" x="266.7" y="15.24" smashed="yes" rot="R270">
+<attribute name="VALUE" x="267.462" y="16.637" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P15" gate="1" x="271.78" y="15.24" smashed="yes" rot="R270">
+<attribute name="VALUE" x="272.542" y="16.637" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P16" gate="1" x="251.46" y="38.1" smashed="yes" rot="R270">
+<attribute name="VALUE" x="252.222" y="39.497" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P17" gate="1" x="256.54" y="38.1" smashed="yes" rot="R270">
+<attribute name="VALUE" x="257.302" y="39.497" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P18" gate="1" x="261.62" y="38.1" smashed="yes" rot="R270">
+<attribute name="VALUE" x="262.382" y="39.497" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P19" gate="1" x="266.7" y="38.1" smashed="yes" rot="R270">
+<attribute name="VALUE" x="267.462" y="39.497" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P20" gate="1" x="271.78" y="38.1" smashed="yes" rot="R270">
+<attribute name="VALUE" x="272.542" y="39.497" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P21" gate="1" x="251.46" y="45.72" smashed="yes" rot="R270">
+<attribute name="VALUE" x="252.222" y="47.117" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P22" gate="1" x="256.54" y="45.72" smashed="yes" rot="R270">
+<attribute name="VALUE" x="257.302" y="47.117" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P23" gate="1" x="261.62" y="45.72" smashed="yes" rot="R270">
+<attribute name="VALUE" x="262.382" y="47.117" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P24" gate="1" x="266.7" y="45.72" smashed="yes" rot="R270">
+<attribute name="VALUE" x="267.462" y="47.117" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P25" gate="1" x="271.78" y="45.72" smashed="yes" rot="R270">
+<attribute name="VALUE" x="272.542" y="47.117" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="+3V16" gate="G$1" x="279.4" y="48.26"/>
+<instance part="GND9" gate="1" x="281.94" y="7.62"/>
 </instances>
 <busses>
 </busses>
@@ -11981,6 +12222,7 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <segment>
 <pinref part="IC4" gate="G$1" pin="GND"/>
 <pinref part="U$1" gate="G$1" pin="GND"/>
+<wire x1="139.7" y1="147.32" x2="139.7" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="GND"/>
@@ -12016,25 +12258,25 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 </segment>
 <segment>
 <pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="147.32" y1="25.4" x2="147.32" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="25.4" x2="142.24" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="-"/>
-<wire x1="132.08" y1="35.56" x2="132.08" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="27.94" x2="147.32" y2="27.94" width="0.1524" layer="91"/>
-<junction x="147.32" y="27.94"/>
+<wire x1="127" y1="35.56" x2="127" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="127" y1="27.94" x2="142.24" y2="27.94" width="0.1524" layer="91"/>
+<junction x="142.24" y="27.94"/>
 <pinref part="C4" gate="G$1" pin="-"/>
-<wire x1="165.1" y1="35.56" x2="165.1" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="27.94" x2="147.32" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="27.94" x2="132.08" y2="27.94" width="0.1524" layer="91"/>
-<junction x="132.08" y="27.94"/>
+<wire x1="160.02" y1="35.56" x2="160.02" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="27.94" x2="142.24" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="27.94" x2="127" y2="27.94" width="0.1524" layer="91"/>
+<junction x="127" y="27.94"/>
 <pinref part="U1" gate="G$1" pin="GND"/>
-<wire x1="147.32" y1="35.56" x2="147.32" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="35.56" x2="142.24" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="124.46" y1="35.56" x2="124.46" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="35.56" x2="119.38" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND19" gate="1" pin="GND"/>
 <pinref part="GND" gate="1" pin="P"/>
-<wire x1="63.5" y1="60.96" x2="63.5" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="40.64" x2="66.04" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="GND@2"/>
@@ -12111,7 +12353,7 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <segment>
 <pinref part="G" gate="1" pin="P"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="73.66" y1="60.96" x2="73.66" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="40.64" x2="76.2" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C6" gate="G$1" pin="1"/>
@@ -12150,9 +12392,47 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 </segment>
 <segment>
 <pinref part="U$27" gate="G$1" pin="GND"/>
-<wire x1="320.04" y1="88.9" x2="314.96" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="314.96" y1="88.9" x2="314.96" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="320.04" y1="104.14" x2="314.96" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="314.96" y1="104.14" x2="314.96" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="JP5" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="GND3" gate="1" pin="GND"/>
+<pinref part="IC9" gate="G$1" pin="GND"/>
+<wire x1="269.24" y1="76.2" x2="284.48" y2="76.2" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND5" gate="1" pin="P"/>
+<wire x1="358.14" y1="73.66" x2="347.98" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="347.98" y1="73.66" x2="347.98" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="GND4" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="GND7" gate="1" pin="P"/>
+<wire x1="76.2" y1="81.28" x2="76.2" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="GND6" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C9" gate="G$1" pin="-"/>
+<pinref part="GND8" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="P11" gate="1" pin="P"/>
+<wire x1="251.46" y1="12.7" x2="251.46" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="P12" gate="1" pin="P"/>
+<wire x1="251.46" y1="10.16" x2="256.54" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="10.16" x2="256.54" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="P13" gate="1" pin="P"/>
+<wire x1="256.54" y1="10.16" x2="261.62" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="261.62" y1="10.16" x2="261.62" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="P14" gate="1" pin="P"/>
+<wire x1="261.62" y1="10.16" x2="266.7" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="10.16" x2="266.7" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="P15" gate="1" pin="P"/>
+<wire x1="266.7" y1="10.16" x2="271.78" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="10.16" x2="271.78" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="GND9" gate="1" pin="GND"/>
+<wire x1="271.78" y1="10.16" x2="281.94" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="ANT" class="0">
@@ -12170,22 +12450,22 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <segment>
 <pinref part="C4" gate="G$1" pin="+"/>
 <pinref part="U1" gate="G$1" pin="VOUT"/>
-<wire x1="165.1" y1="43.18" x2="165.1" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="48.26" x2="165.1" y2="48.26" width="0.1524" layer="91"/>
-<label x="168.656" y="48.768" size="1.778" layer="95"/>
-<wire x1="165.1" y1="48.26" x2="177.8" y2="48.26" width="0.1524" layer="91"/>
-<junction x="165.1" y="48.26"/>
+<wire x1="160.02" y1="43.18" x2="160.02" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="48.26" x2="160.02" y2="48.26" width="0.1524" layer="91"/>
+<label x="163.576" y="48.768" size="1.778" layer="95"/>
+<wire x1="160.02" y1="48.26" x2="172.72" y2="48.26" width="0.1524" layer="91"/>
+<junction x="160.02" y="48.26"/>
 </segment>
 <segment>
 <pinref part="PS2" gate="G$1" pin="1"/>
-<wire x1="200.66" y1="48.26" x2="210.82" y2="48.26" width="0.1524" layer="91"/>
-<label x="208.28" y="50.8" size="1.778" layer="95" rot="R180"/>
+<wire x1="195.58" y1="48.26" x2="205.74" y2="48.26" width="0.1524" layer="91"/>
+<label x="203.2" y="50.8" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
 <segment>
 <pinref part="IC4" gate="G$1" pin="3.3V"/>
-<wire x1="142.24" y1="144.78" x2="142.24" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="147.32" x2="142.24" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
 <wire x1="142.24" y1="139.7" x2="129.54" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="129.54" y1="139.7" x2="129.54" y2="152.4" width="0.1524" layer="91"/>
@@ -12205,23 +12485,13 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <wire x1="177.8" y1="109.22" x2="177.8" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="VCC1" gate="1" pin="P"/>
-<wire x1="48.26" y1="68.58" x2="48.26" y2="66.04" width="0.1524" layer="91"/>
-<label x="48.26" y="58.42" size="1.778" layer="95" rot="R90"/>
-<pinref part="VCC2" gate="1" pin="P"/>
-<wire x1="48.26" y1="66.04" x2="48.26" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="68.58" x2="43.18" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="66.04" x2="48.26" y2="66.04" width="0.1524" layer="91"/>
-<junction x="48.26" y="66.04"/>
-</segment>
-<segment>
 <pinref part="+3V2" gate="G$1" pin="+3V3"/>
-<wire x1="231.14" y1="58.42" x2="231.14" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="58.42" x2="226.06" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="PS2" gate="G$1" pin="2"/>
-<wire x1="231.14" y1="45.72" x2="226.06" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="45.72" x2="220.98" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="+"/>
-<wire x1="241.3" y1="45.72" x2="231.14" y2="45.72" width="0.1524" layer="91"/>
-<junction x="231.14" y="45.72"/>
+<wire x1="236.22" y1="45.72" x2="226.06" y2="45.72" width="0.1524" layer="91"/>
+<junction x="226.06" y="45.72"/>
 </segment>
 <segment>
 <pinref part="R21" gate="G$1" pin="2"/>
@@ -12276,6 +12546,57 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <pinref part="JP4" gate="G$1" pin="1"/>
 <wire x1="302.26" y1="134.62" x2="320.04" y2="134.62" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="IC9" gate="G$1" pin="VCC"/>
+<wire x1="317.5" y1="68.58" x2="332.74" y2="68.58" width="0.1524" layer="91"/>
+<label x="320.04" y="68.58" size="1.778" layer="95"/>
+<pinref part="C9" gate="G$1" pin="+"/>
+</segment>
+<segment>
+<pinref part="R12" gate="G$1" pin="2"/>
+<pinref part="+3V13" gate="G$1" pin="+3V3"/>
+<wire x1="332.74" y1="86.36" x2="332.74" y2="83.82" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R13" gate="G$1" pin="2"/>
+<pinref part="+3V14" gate="G$1" pin="+3V3"/>
+<wire x1="340.36" y1="86.36" x2="340.36" y2="83.82" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="+3.3V" gate="1" pin="P"/>
+<pinref part="+3V15" gate="G$1" pin="+3V3"/>
+<wire x1="353.06" y1="86.36" x2="353.06" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="353.06" y1="81.28" x2="358.14" y2="81.28" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="VCC1" gate="1" pin="P"/>
+<label x="58.42" y="38.1" size="1.778" layer="95" rot="R90"/>
+<wire x1="58.42" y1="48.26" x2="58.42" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="VCC2" gate="1" pin="P"/>
+<wire x1="58.42" y1="81.28" x2="58.42" y2="73.66" width="0.1524" layer="91"/>
+<label x="58.42" y="73.66" size="1.778" layer="95" rot="R270"/>
+</segment>
+<segment>
+<pinref part="P21" gate="1" pin="P"/>
+<wire x1="251.46" y1="43.18" x2="251.46" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="P22" gate="1" pin="P"/>
+<wire x1="251.46" y1="40.64" x2="256.54" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="40.64" x2="256.54" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="P23" gate="1" pin="P"/>
+<wire x1="256.54" y1="40.64" x2="261.62" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="261.62" y1="40.64" x2="261.62" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="P24" gate="1" pin="P"/>
+<wire x1="261.62" y1="40.64" x2="266.7" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="40.64" x2="266.7" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="P25" gate="1" pin="P"/>
+<wire x1="266.7" y1="40.64" x2="271.78" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="40.64" x2="271.78" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="+3V16" gate="G$1" pin="+3V3"/>
+<wire x1="271.78" y1="40.64" x2="279.4" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="279.4" y1="40.64" x2="279.4" y2="45.72" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="MEGA3.3V" class="0">
 <segment>
@@ -12285,8 +12606,8 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 </segment>
 <segment>
 <pinref part="PS2" gate="G$1" pin="3"/>
-<wire x1="210.82" y1="45.72" x2="200.66" y2="45.72" width="0.1524" layer="91"/>
-<label x="200.406" y="46.736" size="1.778" layer="95" rot="R180"/>
+<wire x1="205.74" y1="45.72" x2="195.58" y2="45.72" width="0.1524" layer="91"/>
+<label x="195.326" y="46.736" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="ESP3.3V" class="0">
@@ -12297,8 +12618,8 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 </segment>
 <segment>
 <pinref part="PS2" gate="G$1" pin="4"/>
-<wire x1="210.82" y1="43.18" x2="200.66" y2="43.18" width="0.1524" layer="91"/>
-<label x="208.026" y="42.418" size="1.778" layer="95" rot="R180"/>
+<wire x1="205.74" y1="43.18" x2="195.58" y2="43.18" width="0.1524" layer="91"/>
+<label x="202.946" y="42.418" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="TR-VCC" class="0">
@@ -12331,7 +12652,7 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <segment>
 <pinref part="IC4" gate="G$1" pin="MOSI"/>
 <pinref part="R6" gate="G$1" pin="2"/>
-<wire x1="144.78" y1="144.78" x2="144.78" y2="127" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="147.32" x2="144.78" y2="127" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="127" x2="144.78" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="119.38" x2="139.7" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="G$1" pin="*11"/>
@@ -12343,7 +12664,7 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <segment>
 <pinref part="IC4" gate="G$1" pin="RFSCL"/>
 <pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="147.32" y1="144.78" x2="147.32" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="147.32" x2="147.32" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="121.92" x2="147.32" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="114.3" x2="139.7" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="G$1" pin="13"/>
@@ -12355,7 +12676,7 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <segment>
 <pinref part="IC4" gate="G$1" pin="MISO"/>
 <pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="149.86" y1="144.78" x2="149.86" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="147.32" x2="149.86" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="124.46" x2="139.7" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="G$1" pin="12"/>
 <wire x1="185.42" y1="124.46" x2="149.86" y2="124.46" width="0.1524" layer="91"/>
@@ -12366,7 +12687,7 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <segment>
 <pinref part="IC4" gate="G$1" pin="RFCS"/>
 <pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="157.48" y1="144.78" x2="157.48" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="147.32" x2="157.48" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="129.54" x2="139.7" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="G$1" pin="*10"/>
 <wire x1="185.42" y1="129.54" x2="157.48" y2="129.54" width="0.1524" layer="91"/>
@@ -12388,6 +12709,16 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <label x="22.86" y="157.48" size="1.778" layer="95" rot="MR0"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="27.94" y1="157.48" x2="22.86" y2="157.48" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="IC9" gate="G$1" pin="RXD"/>
+<wire x1="284.48" y1="68.58" x2="276.86" y2="68.58" width="0.1524" layer="91"/>
+<label x="276.86" y="68.58" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="TX" gate="1" pin="P"/>
+<wire x1="358.14" y1="78.74" x2="347.98" y2="78.74" width="0.1524" layer="91"/>
+<label x="347.98" y="78.74" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MEGA-TX" class="0">
@@ -12414,6 +12745,16 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="27.94" y1="154.94" x2="22.86" y2="154.94" width="0.1524" layer="91"/>
 <label x="22.86" y="154.94" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="IC9" gate="G$1" pin="TXD"/>
+<wire x1="317.5" y1="76.2" x2="327.66" y2="76.2" width="0.1524" layer="91"/>
+<label x="320.04" y="76.2" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="RX" gate="1" pin="P"/>
+<wire x1="358.14" y1="76.2" x2="347.98" y2="76.2" width="0.1524" layer="91"/>
+<label x="347.98" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -12530,13 +12871,18 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <wire x1="195.58" y1="167.64" x2="180.34" y2="167.64" width="0.1524" layer="91"/>
 <label x="180.34" y="167.64" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="D6" gate="1" pin="P"/>
+<wire x1="68.58" y1="81.28" x2="68.58" y2="73.66" width="0.1524" layer="91"/>
+<label x="68.58" y="73.66" size="1.778" layer="95" rot="R270"/>
+</segment>
 </net>
 <net name="N$19" class="0">
 <segment>
 <pinref part="IC1" gate="D1" pin="D0"/>
 <wire x1="195.58" y1="170.18" x2="193.04" y2="170.18" width="0.1524" layer="91"/>
 <pinref part="D0" gate="1" pin="P"/>
-<wire x1="193.04" y1="170.18" x2="180.34" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="193.04" y1="170.18" x2="177.8" y2="170.18" width="0.1524" layer="91"/>
 <pinref part="R11" gate="G$1" pin="2"/>
 <wire x1="193.04" y1="144.78" x2="254" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="254" y1="144.78" x2="254" y2="121.92" width="0.1524" layer="91"/>
@@ -12581,7 +12927,7 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <segment>
 <pinref part="D8" gate="1" pin="P"/>
 <pinref part="IC1" gate="D1" pin="D8"/>
-<wire x1="180.34" y1="160.02" x2="190.5" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="160.02" x2="190.5" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="190.5" y1="160.02" x2="195.58" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="190.5" y1="160.02" x2="190.5" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="R10" gate="G$1" pin="2"/>
@@ -12629,23 +12975,23 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 </segment>
 <segment>
 <pinref part="PS1" gate="G$1" pin="3"/>
-<wire x1="106.68" y1="45.72" x2="99.06" y2="45.72" width="0.1524" layer="91"/>
-<label x="99.06" y="45.72" size="1.778" layer="95"/>
+<wire x1="101.6" y1="45.72" x2="91.44" y2="45.72" width="0.1524" layer="91"/>
+<label x="91.44" y="45.72" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$23" class="0">
 <segment>
-<wire x1="132.08" y1="43.18" x2="132.08" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="127" y1="43.18" x2="127" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="+"/>
 <pinref part="U1" gate="G$1" pin="VIN"/>
-<junction x="132.08" y="48.26"/>
-<wire x1="132.08" y1="48.26" x2="134.62" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="48.26" x2="124.46" y2="48.26" width="0.1524" layer="91"/>
+<junction x="127" y="48.26"/>
+<wire x1="127" y1="48.26" x2="129.54" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="48.26" x2="119.38" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="PS1" gate="G$1" pin="2"/>
 <pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="124.46" y1="48.26" x2="132.08" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="43.18" x2="124.46" y2="48.26" width="0.1524" layer="91"/>
-<junction x="124.46" y="48.26"/>
+<wire x1="119.38" y1="48.26" x2="127" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="43.18" x2="119.38" y2="48.26" width="0.1524" layer="91"/>
+<junction x="119.38" y="48.26"/>
 </segment>
 </net>
 <net name="MEGA5V" class="0">
@@ -12664,8 +13010,8 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 </segment>
 <segment>
 <pinref part="PS1" gate="G$1" pin="1"/>
-<wire x1="106.68" y1="50.8" x2="99.06" y2="50.8" width="0.1524" layer="91"/>
-<label x="99.06" y="50.8" size="1.778" layer="95"/>
+<wire x1="101.6" y1="50.8" x2="91.44" y2="50.8" width="0.1524" layer="91"/>
+<label x="91.44" y="50.8" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="J2" gate="G$1" pin="1"/>
@@ -12674,8 +13020,8 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <label x="254.762" y="189.992" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<wire x1="320.04" y1="91.44" x2="304.8" y2="91.44" width="0.1524" layer="91"/>
-<label x="307.34" y="91.44" size="1.778" layer="95"/>
+<wire x1="320.04" y1="106.68" x2="304.8" y2="106.68" width="0.1524" layer="91"/>
+<label x="307.34" y="106.68" size="1.778" layer="95"/>
 <pinref part="JP5" gate="G$1" pin="1"/>
 </segment>
 </net>
@@ -12726,6 +13072,94 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <pinref part="R2" gate="G$1" pin="1"/>
 </segment>
 </net>
+<net name="N$24" class="0">
+<segment>
+<pinref part="R12" gate="G$1" pin="1"/>
+<pinref part="IC9" gate="G$1" pin="CH_PD"/>
+<wire x1="332.74" y1="73.66" x2="317.5" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$26" class="0">
+<segment>
+<pinref part="IC9" gate="G$1" pin="RST"/>
+<wire x1="317.5" y1="71.12" x2="340.36" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="R13" gate="G$1" pin="1"/>
+<wire x1="340.36" y1="71.12" x2="340.36" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$27" class="0">
+<segment>
+<pinref part="IC9" gate="G$1" pin="GPIO2"/>
+<pinref part="GPIO2" gate="1" pin="P"/>
+<wire x1="276.86" y1="73.66" x2="284.48" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$28" class="0">
+<segment>
+<pinref part="P1" gate="1" pin="P"/>
+<wire x1="251.46" y1="27.94" x2="251.46" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="P2" gate="1" pin="P"/>
+<wire x1="251.46" y1="25.4" x2="256.54" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="25.4" x2="256.54" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="P3" gate="1" pin="P"/>
+<wire x1="256.54" y1="25.4" x2="261.62" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="261.62" y1="25.4" x2="261.62" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="P4" gate="1" pin="P"/>
+<wire x1="261.62" y1="25.4" x2="266.7" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="25.4" x2="266.7" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="P5" gate="1" pin="P"/>
+<wire x1="266.7" y1="25.4" x2="271.78" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="25.4" x2="271.78" y2="27.94" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$29" class="0">
+<segment>
+<pinref part="P6" gate="1" pin="P"/>
+<wire x1="251.46" y1="20.32" x2="251.46" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="P7" gate="1" pin="P"/>
+<wire x1="251.46" y1="17.78" x2="256.54" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="17.78" x2="256.54" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="P8" gate="1" pin="P"/>
+<wire x1="256.54" y1="17.78" x2="261.62" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="261.62" y1="17.78" x2="261.62" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="P9" gate="1" pin="P"/>
+<wire x1="261.62" y1="17.78" x2="266.7" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="17.78" x2="266.7" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="P10" gate="1" pin="P"/>
+<wire x1="266.7" y1="17.78" x2="271.78" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="17.78" x2="271.78" y2="20.32" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$31" class="0">
+<segment>
+<pinref part="P16" gate="1" pin="P"/>
+<wire x1="251.46" y1="35.56" x2="251.46" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="P17" gate="1" pin="P"/>
+<wire x1="251.46" y1="33.02" x2="256.54" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="33.02" x2="256.54" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="P18" gate="1" pin="P"/>
+<wire x1="256.54" y1="33.02" x2="261.62" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="261.62" y1="33.02" x2="261.62" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="P19" gate="1" pin="P"/>
+<wire x1="261.62" y1="33.02" x2="266.7" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="33.02" x2="266.7" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="P20" gate="1" pin="P"/>
+<wire x1="266.7" y1="33.02" x2="271.78" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="33.02" x2="271.78" y2="35.56" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="ESP-RESET" class="0">
+<segment>
+<pinref part="IC1" gate="D1" pin="RESET"/>
+<wire x1="180.34" y1="175.26" x2="195.58" y2="175.26" width="0.1524" layer="91"/>
+<label x="180.34" y="175.26" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC9" gate="G$1" pin="GPIO0"/>
+<wire x1="284.48" y1="71.12" x2="276.86" y2="71.12" width="0.1524" layer="91"/>
+<label x="276.86" y="71.12" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -12736,14 +13170,14 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <approved hash="105,1,350.52,182.88,N$5,,,,,"/>
 <approved hash="105,1,363.22,152.4,N$21,,,,,"/>
 <approved hash="105,1,367.03,149.86,N$22,,,,,"/>
-<approved hash="108,1,320.04,180.34,GND,,,,,"/>
 <approved hash="108,1,320.04,149.86,GND,,,,,"/>
-<approved hash="108,1,320.04,154.94,+3V3,,,,,"/>
+<approved hash="108,1,320.04,180.34,GND,,,,,"/>
 <approved hash="108,1,320.04,185.42,+3V3,,,,,"/>
+<approved hash="108,1,320.04,154.94,+3V3,,,,,"/>
+<approved hash="108,1,353.06,180.34,N$5,,,,,"/>
+<approved hash="108,1,355.346,183.388,N$5,,,,,"/>
 <approved hash="108,1,353.06,182.88,N$5,,,,,"/>
 <approved hash="108,1,355.346,179.324,N$5,,,,,"/>
-<approved hash="108,1,355.346,183.388,N$5,,,,,"/>
-<approved hash="108,1,353.06,180.34,N$5,,,,,"/>
 <approved hash="108,1,320.04,152.4,GPIO14-D5,,,,,"/>
 <approved hash="108,1,320.04,182.88,GPIO13-D7,,,,,"/>
 <approved hash="111,1,190.5,200.66,RF-DATA-IN,,,,,"/>
@@ -12755,7 +13189,6 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <approved hash="113,1,102.591,96.52,U$5,,,,,"/>
 <approved hash="113,1,177.8,105.131,U$6,,,,,"/>
 <approved hash="113,1,232.689,160.02,U$7,,,,,"/>
-<approved hash="113,1,49.5275,68.8594,VCC1,,,,,"/>
 <approved hash="113,1,323.987,182.88,JP2,,,,,"/>
 <approved hash="113,1,25.4,138.151,U$13,,,,,"/>
 <approved hash="113,1,323.987,133.35,JP4,,,,,"/>
@@ -12774,7 +13207,6 @@ Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to 
 <approved hash="113,1,246.38,102.591,U$15,,,,,"/>
 <approved hash="113,1,223.842,125.73,LED4,,,,,"/>
 <approved hash="113,1,223.52,112.751,U$20,,,,,"/>
-<approved hash="113,1,44.4475,68.8594,VCC2,,,,,"/>
 <approved hash="113,1,119.38,138.151,U$22,,,,,"/>
 <approved hash="113,1,33.3146,142.875,J1,,,,,"/>
 <approved hash="113,1,254.322,107.95,LED3,,,,,"/>
